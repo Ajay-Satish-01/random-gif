@@ -14,7 +14,7 @@ const fetchapi = async () => {
   if (jsonconvertion2.data.length > 0) {
     dom(jsonconvertion2.data, jsonconvert[0]);
   } else {
-    alert('No GIFS found');
+    alert('No GIFS found.Please refresh');
   }
 };
 function dom(array, word) {
@@ -42,11 +42,9 @@ function gifs(gif, word) {
   cardbody.setAttribute('class', 'card-body');
   let h5 = document.createElement('h5');
   h5.setAttribute('class', 'card-title');
-  h5.innerText = 'The URL for this gif is ' + gif.images.downsized.url;
-  let p = document.createElement('p');
-  p.setAttribute('class', 'card-text p-2');
-  p.innerText = word;
-  cardbody.append(h5, p);
+  h5.innerText = word;
+
+  cardbody.append(h5);
   carddiv.append(img, cardbody);
   col1.append(carddiv);
   rowdiv.append(col1);
